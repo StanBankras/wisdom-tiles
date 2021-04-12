@@ -6,22 +6,23 @@ const configContainer = document.querySelector('.wrapper .configuration');
 
 function reset() {
   resetColor();
-  removeResetButton();
   resetQuote();
+  removeResetButton();
 }
 
 function addResetButton() {
   if(document.getElementById('reset')) return;
   const resetBtn = document.createElement('button');
   resetBtn.id = 'reset';
+  resetBtn.innerText = 'Reset tile';
+  resetBtn.classList.add('btn');
   resetBtn.addEventListener('click', () => reset());
-  resetBtn.innerText = 'Reset';
 
   configContainer.appendChild(resetBtn);
 }
 
 function removeResetButton() {
-  const button = document.getElementById('reset')
+  const button = document.getElementById('reset');
   if(button) button.remove();
 }
 

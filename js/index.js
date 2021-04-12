@@ -4,14 +4,14 @@ import { checkConfiguration } from './state-manager.js';
 import { initButtons } from './quote.js';
 
 export const defaultConfiguration = {
-  color: undefined,
+  color: '#ffffff',
   quoteType: 'world',
   quote: '',
   pattern: undefined
 };
 
 export let configuration = {
-  color: undefined,
+  color: '#ffffff',
   quoteType: 'world',
   quote: '',
   pattern: undefined

@@ -27,15 +27,15 @@ export function resetQuote() {
 }
 
 function ownQuote() {
-  setActiveType('own');
   configuration.quoteType = 'own';
+  setActiveType('own');
   ownQuoteEl.classList.add('shown');
 }
 
 function getQuote(type) {
+  configuration.quoteType = type;
   setActiveType(type);
   ownQuoteEl.classList.remove('shown');
-  configuration.quoteType = type;
   return getRandomItem(quotes[type]);
 }
 
