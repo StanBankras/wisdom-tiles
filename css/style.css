@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -51,17 +52,29 @@ h1, h2, h3, h4 {
   cursor: pointer;
 }
 
-.wrapper .buttons button.active, .wrapper .buttons button:hover {
+.wrapper .buttons button.selected, .wrapper .buttons button:hover {
   background-color: white;
   color: var(--dark);
   outline: none;
 }
 
-.wrapper .own-text {
-  margin-top: 2rem;
+.wrapper .buttons button.selected:not(#own-quote)::after {
+  content: ' ⟲';
 }
 
-.wrapper .own-text textarea {
+.wrapper .own-quote {
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 2rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.wrapper .own-quote.shown {
+  max-height: 100%;
+}
+
+.wrapper .own-quote textarea {
   margin-top: 1rem;
   width: 100%;
   background-color: var(--light);
@@ -94,6 +107,31 @@ h1, h2, h3, h4 {
 .wrapper .steps .colors button {
   padding: 1rem;
   background-color: red;
-  border: none;
+  border: 2px solid transparent;
+  position: relative;
+  border-radius: 10px;
+}
+
+.wrapper .steps .colors button.selected, .wrapper .steps .colors button:active, .wrapper .steps .colors button:focus {
+  border: 2px dashed black;
+  outline: none;
+}
+
+.wrapper #reset {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: var(--light);
+  color: var(--medium);
+  border: 2px solid var(--medium);
+  font-weight: bold;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.wrapper #reset.selected, .wrapper #reset:hover {
+  background-color: white;
+  color: var(--dark);
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */
