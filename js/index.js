@@ -1,7 +1,5 @@
-import './state-manager.js';
-import { initColors } from './colors.js';
-import { checkConfiguration } from './state-manager.js';
-import { initButtons } from './quote.js';
+import { initColors } from './modules/colors.js';
+import { initButtons } from './modules/quote.js';
 
 export const defaultConfiguration = {
   color: '#ffffff',

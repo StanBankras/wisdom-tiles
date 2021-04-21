@@ -1,4 +1,4 @@
-import { configuration, defaultConfiguration } from './index.js';
+import { configuration, defaultConfiguration } from '../index.js';
 import { resetColor } from './colors.js';
 import { resetQuote } from './quote.js';
 

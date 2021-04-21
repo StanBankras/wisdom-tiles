@@ -1,4 +1,4 @@
-import { configuration } from './index.js';
+import { configuration } from '../index.js';
 import { checkConfiguration } from './state-manager.js';
 
 export function initColors() {
