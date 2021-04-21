@@ -2,6 +2,13 @@ import { configuration } from '../index.js';
 import { checkConfiguration } from './state-manager.js';
 import { getRandomItem } from './utils.js';
 
+const buttons = {
+  own: document.getElementById('own-quote'),
+  dutch: document.getElementById('dutch-quote'),
+  world: document.getElementById('world-quote'),
+};
+const ownQuoteEl = document.querySelector('.own-quote');
+const input = document.querySelector('#quote-input');
 let quotes = {};
 
 fetch('./assets/data/quotes.json')
@@ -12,13 +19,9 @@ fetch('./assets/data/quotes.json')
     checkConfiguration();
   });
 
-const buttons = {
-  own: document.getElementById('own-quote'),
-  dutch: document.getElementById('dutch-quote'),
-  world: document.getElementById('world-quote'),
-}
+  input.addEventListener('keydown', e => handleQuoteInput(e));
+  input.addEventListener('keyup', e => handleQuoteInput(e));
 
-const ownQuoteEl = document.querySelector('.own-quote');
 
 export function initButtons() {
   Object.keys(buttons).forEach(key => {
@@ -33,6 +36,11 @@ export function initButtons() {
 export function resetQuote() {
   configuration.quoteType = 'world';
   configuration.quote = getQuote('world');
+}
+
+function handleQuoteInput(e) {
+  configuration.quote = e.target.value;
+  checkConfiguration();
 }
 
 function ownQuote() {
