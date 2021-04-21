@@ -2,10 +2,15 @@ import { configuration } from '../index.js';
 import { checkConfiguration } from './state-manager.js';
 import { getRandomItem } from './utils.js';
 
-const quotes = {
-  world: ['quote', 'werwer', 'wffsfsf', 'appapapa', 'njscxzcjsn'],
-  dutch: ['quote', 'werwer', 'wffsfsf', 'appapapa', 'njscxzcjsn'],
-};
+let quotes = {};
+
+fetch('/assets/data/quotes.json')
+  .then(res => res.json())
+  .then(data => {
+    quotes = data;
+    console.log(data);
+    checkConfiguration();
+  });
 
 const buttons = {
   own: document.getElementById('own-quote'),
@@ -17,7 +22,11 @@ const ownQuoteEl = document.querySelector('.own-quote');
 
 export function initButtons() {
   Object.keys(buttons).forEach(key => {
-    buttons[key].addEventListener('click', () => key === 'own' ? ownQuote() : getQuote(key));
+    buttons[key].addEventListener('click', () => {
+      if(key === 'own') return ownQuote();
+      configuration.quoteType = key;
+      configuration.quote = getQuote(key);
+    });
   });
 }
 
@@ -36,7 +45,7 @@ function getQuote(type) {
   configuration.quoteType = type;
   setActiveType(type);
   ownQuoteEl.classList.remove('shown');
-  return getRandomItem(quotes[type]);
+  return getRandomItem(quotes[type]).quote;
 }
 
 function setActiveType(type) {

@@ -1,6 +1,7 @@
 import { configuration, defaultConfiguration } from '../index.js';
 import { resetColor } from './colors.js';
 import { resetQuote } from './quote.js';
+import updateCanvas from './canvas.js';
 
 const configContainer = document.querySelector('.wrapper .configuration');
 
@@ -27,6 +28,8 @@ function removeResetButton() {
 }
 
 export function checkConfiguration() {
+  updateCanvas();
+  
   if(JSON.stringify(configuration) === JSON.stringify(defaultConfiguration)) {
     removeResetButton();
   } else {
