@@ -11,7 +11,8 @@ export default function() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawPattern(pattern);
     if(configuration.quote) {
-      ctx.font = '20px Arial';
+      ctx.font = 'bold 20px Arial';
+      ctx.fillStyle = configuration.color;
       ctx.fillText(configuration.quote, 100, 100);
     }
   }

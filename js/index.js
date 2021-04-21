@@ -3,15 +3,15 @@ import { initButtons } from './modules/quote.js';
 import updateCanvas from './modules/canvas.js';
 
 export const defaultConfiguration = {
-  color: '#ffffff',
-  quoteType: 'world',
+  color: '#001b39',
+  quoteType: 'dutch',
   quote: undefined,
   pattern: 'pattern.jpg'
 };
 
 export let configuration = {
-  color: '#ffffff',
-  quoteType: 'world',
+  color: '#001b39',
+  quoteType: 'dutch',
   quote: undefined,
   pattern: 'pattern.jpg'
 };

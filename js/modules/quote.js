@@ -8,7 +8,7 @@ fetch('/assets/data/quotes.json')
   .then(res => res.json())
   .then(data => {
     quotes = data;
-    console.log(data);
+    configuration.quote = getQuote('dutch');
     checkConfiguration();
   });
 
