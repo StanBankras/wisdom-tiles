@@ -4,7 +4,7 @@ import { getRandomItem } from './utils.js';
 
 let quotes = {};
 
-fetch('/assets/data/quotes.json')
+fetch('./assets/data/quotes.json')
   .then(res => res.json())
   .then(data => {
     quotes = data;
