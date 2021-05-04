@@ -1,6 +1,7 @@
 import { configuration, defaultConfiguration } from '../index.js';
 import { resetColor } from './colors.js';
 import { resetQuote } from './quote.js';
+import { resetPattern } from './patterns.js';
 import updateCanvas from './canvas.js';
 
 const configContainer = document.querySelector('.wrapper .configuration');
@@ -8,7 +9,9 @@ const configContainer = document.querySelector('.wrapper .configuration');
 function reset() {
   resetColor();
   resetQuote();
+  resetPattern();
   removeResetButton();
+  checkConfiguration();
 }
 
 function addResetButton() {

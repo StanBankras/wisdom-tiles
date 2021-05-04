@@ -1,4 +1,4 @@
-import { configuration } from '../index.js';
+import { configuration, defaultConfiguration } from '../index.js';
 import { checkConfiguration } from './state-manager.js';
 import { getRandomItem } from './utils.js';
 
@@ -15,7 +15,9 @@ fetch('./assets/data/quotes.json')
   .then(res => res.json())
   .then(data => {
     quotes = data;
-    configuration.quote = getQuote('dutch');
+    const quote = getQuote(defaultConfiguration.quoteType);
+    configuration.quote = quote;
+    defaultConfiguration.quote = quote;
     checkConfiguration();
   });
 
@@ -34,8 +36,10 @@ export function initButtons() {
 }
 
 export function resetQuote() {
-  configuration.quoteType = 'world';
-  configuration.quote = getQuote('world');
+  configuration.quoteType = defaultConfiguration.quoteType;
+  const quote = getQuote(defaultConfiguration.quoteType);
+  configuration.quote = quote;
+  defaultConfiguration.quote = quote;
 }
 
 function handleQuoteInput(e) {

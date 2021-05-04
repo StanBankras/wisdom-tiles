@@ -152,4 +152,43 @@ h2 ~ p {
       align-self: center;
   margin-top: 3rem;
 }
+
+.patterns {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.patterns button {
+  background-color: transparent;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.patterns button.selected, .patterns button:hover {
+  background-color: #cbdbff;
+}
+
+.patterns button p {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.patterns button img {
+  width: 30px;
+  margin-bottom: 0.5rem;
+}
 /*# sourceMappingURL=style.css.map */

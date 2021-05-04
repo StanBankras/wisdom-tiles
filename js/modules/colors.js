@@ -1,4 +1,4 @@
-import { configuration } from '../index.js';
+import { configuration, defaultConfiguration } from '../index.js';
 import { checkConfiguration } from './state-manager.js';
 
 export function initColors() {
@@ -33,5 +33,5 @@ function selectColor(color) {
 export function resetColor() {
   const colorBtn = document.querySelector('.colors .selected');
   if(colorBtn) colorBtn.classList.remove('selected');
-  configuration.color = undefined;
+  configuration.color = defaultConfiguration.color;
 }

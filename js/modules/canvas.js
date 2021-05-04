@@ -6,7 +6,7 @@ const canvasWidth = 400;
 
 export default function() {
   const pattern = new Image();
-  pattern.src = 'assets/img/' + configuration.pattern;
+  pattern.src = 'assets/img/patterns/' + configuration.pattern;
   pattern.onload = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = configuration.color;
@@ -21,14 +21,7 @@ export default function() {
 }
 
 function drawPattern(img) {
-  const size = canvasWidth / 10;
-  for(let i = 0; i < 10; i++) {
-    const location = i * size;
-    ctx.drawImage(img, location, 0, size, size);
-    ctx.drawImage(img, 0, location, size, size);
-    ctx.drawImage(img, canvasWidth - size, location, size, size);
-    ctx.drawImage(img, location, canvasWidth - size, size, size);
-  }
+  ctx.drawImage(img, 0, 0, canvasWidth, canvasWidth);
 }
 
 function calculateWrappedText(text, maxWidth, lineHeight, x, y) {

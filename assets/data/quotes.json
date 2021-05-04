@@ -152,6 +152,17 @@
     }
   ],
   "world": [
-    
+    {
+      "country": "South-Korean",
+      "quote": "고생 끝에 낙이 온다 – Go-saeng kkeut-e nag-i on-da",
+      "translation": "At the end of hardship comes happiness.",
+      "meaning": " It means that happiness and good things will happen after experiencing difficult or hard work."
+    },
+    {
+      "country": "Spanish",
+      "quote": "A lo hecho, pecho.",
+      "translation": "To what’s done, chest.",
+      "meaning": " What’s done is done. You’ve made your bed, now lie in it. When something bad has happened it’s too late to change it, you need to just face up to it."
+    }
   ]
 }
