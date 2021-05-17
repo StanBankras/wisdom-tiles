@@ -1,15 +1,15 @@
-import { configuration, defaultConfiguration } from '../index.js';
+import { configuration, countries, defaultConfiguration } from '../index.js';
 import { checkConfiguration } from './state-manager.js';
 
 export function initPatterns() {
   const patternsEl = document.querySelector('.patterns');
-  const patterns = ['ARGENTINA.svg', 'ARUBA.svg', 'GERMANY.svg', 'GUATEMALA.svg', 'HOLLAND.svg', 'ITALY.svg', 'SWEDEN.svg', 'SWITZERLAND.svg'];
+  const patterns = countries;
 
   patterns.forEach(pattern => {
     const btn = document.createElement('button');
     const p = document.createElement('p');
     const img = document.createElement('img');
-    img.src = './assets/img/patterns/pattern-placeholder.svg';
+    img.src = `./assets/img/flags/${pattern}.png`;
     p.innerText = pattern.split('.')[0].toLowerCase();
     btn.appendChild(img);
     btn.appendChild(p);

@@ -6,7 +6,7 @@ const canvasWidth = 400;
 
 export default function() {
   const pattern = new Image();
-  pattern.src = 'assets/img/patterns/' + configuration.pattern;
+  pattern.src = 'assets/img/patterns/' + configuration.pattern + '.svg';
   pattern.onload = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = configuration.color;
