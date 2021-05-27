@@ -7,12 +7,9 @@ export function initPatterns() {
 
   patterns.forEach(pattern => {
     const btn = document.createElement('button');
-    const p = document.createElement('p');
     const img = document.createElement('img');
     img.src = `./assets/img/flags/${pattern}.png`;
-    p.innerText = pattern.split('.')[0].toLowerCase();
     btn.appendChild(img);
-    btn.appendChild(p);
     btn.dataset.pattern = pattern;
     
     if(configuration.pattern === pattern) btn.classList.add('selected');

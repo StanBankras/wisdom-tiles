@@ -2,7 +2,7 @@ import { configuration } from '../index.js';
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-const canvasWidth = 400;
+const canvasWidth = 375;
 
 export default function() {
   const pattern = new Image();
@@ -10,7 +10,7 @@ export default function() {
   pattern.onload = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = configuration.color;
-    ctx.font = '20px Arial';
+    ctx.font = '22px acumin-pro';
 
     drawPattern(pattern);
     if(configuration.quote) {

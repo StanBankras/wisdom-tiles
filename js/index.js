@@ -18,7 +18,7 @@ export let configuration = {
   pattern: 'HOLLAND'
 };
 
-export const countries = ['ARGENTINA', 'ARUBA', 'GERMANY', 'GUATEMALA', 'HOLLAND', 'ITALY', 'SWEDEN', 'SWITZERLAND'];
+export const countries = ['ARGENTINA', 'ARUBA', 'GERMANY', 'GUATEMALA', 'HOLLAND', 'ITALY', 'SWEDEN', 'SWITZERLAND', 'ITALY', 'SWEDEN', 'SWITZERLAND', 'ITALY'];
 
 initColors();
 initButtons();
