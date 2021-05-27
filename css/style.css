@@ -92,10 +92,37 @@ h2 ~ p {
   overflow-y: auto;
 }
 
+@media (max-width: 1350px) {
+  .wrapper {
+    width: calc(100% - 170px);
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    width: unset;
+    margin-left: 0;
+  }
+}
+
 .wrapper > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 1350px) {
+  .wrapper > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
 }
 
 .wrapper .buttons {
@@ -210,6 +237,20 @@ h2 ~ p {
   border-right: 2px solid #b4bac3;
 }
 
+@media (max-width: 1600px) {
+  .wrapper .configuration {
+    padding-right: 3rem;
+  }
+}
+
+@media (max-width: 1350px) {
+  .wrapper .configuration {
+    padding-right: 0;
+    border-width: 0;
+    margin-bottom: 4rem;
+  }
+}
+
 .wrapper #reset {
   -ms-grid-column-align: center;
       justify-self: center;
@@ -272,6 +313,18 @@ h2 ~ p {
           flex-direction: column;
 }
 
+@media (max-width: 1600px) {
+  .result {
+    padding-left: 3rem;
+  }
+}
+
+@media (max-width: 1350px) {
+  .result {
+    padding-left: 0;
+  }
+}
+
 .result canvas {
   margin: 0 auto;
 }
@@ -281,28 +334,127 @@ h2 ~ p {
   z-index: -1;
 }
 
-.background.left {
-  left: 0;
-  height: 100%;
+.background.top, .background.bottom {
+  top: 0;
   z-index: -2;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.background.right {
-  position: right;
-  height: 100vh;
-  right: 0;
-  z-index: -2;
-}
-
-.background.top {
+.background.top::after, .background.bottom::after {
+  content: '';
+  background-color: #567bbb;
+  height: 49px;
+  width: 100vw;
+  position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  width: 100vw;
+  z-index: -3;
 }
 
-.background.bottom {
+.background.top div, .background.bottom div {
+  width: 400px;
+}
+
+.background.top div img, .background.bottom div img {
+  width: 100%;
+}
+
+@media (max-width: 1600px) {
+  .background.top div:nth-child(4), .background.bottom div:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .background.top div:nth-child(3), .background.bottom div:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .background.top div, .background.bottom div {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .background.top div:nth-child(2), .background.bottom div:nth-child(2) {
+    display: none;
+  }
+  .background.top div img, .background.bottom div img {
+    width: 400px;
+  }
+}
+
+.background.top.bottom, .background.bottom.bottom {
   bottom: 0;
-  width: 100vw;
+  top: unset;
+}
+
+.background.top.bottom img, .background.bottom.bottom img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin-bottom: -5px;
+}
+
+.background.top.bottom::after, .background.bottom.bottom::after {
+  bottom: 0;
+  top: unset;
+}
+
+.background.left, .background.right {
+  left: 0;
+  top: 50%;
+  height: 100vh;
+  width: 49px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: -4;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+@media (max-width: 767px) {
+  .background.left, .background.right {
+    display: none;
+  }
+}
+
+.background.left::after, .background.right::after {
+  content: '';
+  background-color: #567bbb;
+  width: 49px;
+  height: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -5;
+}
+
+.background.left.right, .background.right.right {
+  left: unset;
+  right: 0;
+}
+
+.background.left.right::after, .background.right.right::after {
+  left: unset;
+  right: 0;
 }
 /*# sourceMappingURL=style.css.map */
