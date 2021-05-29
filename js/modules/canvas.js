@@ -1,8 +1,11 @@
 import { configuration } from '../index.js';
+import { checkConfiguration } from './state-manager.js';
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-const canvasWidth = 375;
+let canvasWidth = 400;
+
+setTimeout(() => checkCanvasSize(), 50);
 
 export default function() {
   const pattern = new Image();
@@ -14,7 +17,7 @@ export default function() {
 
     drawPattern(pattern);
     if(configuration.quote) {
-      const lines = calculateWrappedText(configuration.quote, 250, 30, 100, 100);
+      const lines = calculateWrappedText(configuration.quote, canvasWidth - 120, 30, 100, 100);
       drawLinesCentered(lines, canvasWidth / 2, canvasWidth / 2)
     }
   }
@@ -57,3 +60,26 @@ function drawLinesCentered(lines, centerY, centerX) {
     ctx.fillText(line.line, xPos, yPos);
   });
 }
+
+function checkCanvasSize() {
+  if(window.innerWidth < 320) {
+    canvasWidth = 280;
+    canvas.width = 280;
+    canvas.height = 280;
+  } else if(window.innerWidth < 360) {
+    canvasWidth = 300;
+    canvas.width = 300;
+    canvas.height = 300;
+  } else if(window.innerWidth < 500) {
+    canvasWidth = 320;
+    canvas.width = 320;
+    canvas.height = 320;
+  } else {
+    canvasWidth = 400;
+    canvas.width = 400;
+    canvas.height = 400;
+  }
+  checkConfiguration();
+}
+
+window.addEventListener('resize', e => checkCanvasSize());

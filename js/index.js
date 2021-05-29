@@ -18,9 +18,12 @@ export let configuration = {
   pattern: 'HOLLAND'
 };
 
-export const countries = ['ARGENTINA', 'ARUBA', 'GERMANY', 'GUATEMALA', 'HOLLAND', 'ITALY', 'SWEDEN', 'SWITZERLAND', 'ITALY', 'SWEDEN', 'SWITZERLAND', 'ITALY'];
+export const countries = [
+  'HOLLAND', 'SPAIN', 'ARGENTINA', 'ARUBA', 'AUSTRALIAA', 'BELGIUM', 'CHINA', 'CR', 'FINLAND', 'FRANCE', 'GERMANY', 'GHANA', 'GUATEMALA',
+  'ITALY', 'JAPAN', 'NEW ZEALAND', 'NIGERIA', 'SOUTH-AFRICA', 'SOUTHKOREA', 'SWEDEN', 'SWITZERLAND',
+];
 
 initColors();
 initButtons();
-initPatterns();
+initPatterns(1);
 updateCanvas();

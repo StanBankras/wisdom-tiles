@@ -36,6 +36,6 @@ export function checkConfiguration() {
   if(JSON.stringify(configuration) === JSON.stringify(defaultConfiguration)) {
     removeResetButton();
   } else {
-    addResetButton();
+    // addResetButton();
   }
 }

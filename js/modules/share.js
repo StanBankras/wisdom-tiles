@@ -26,12 +26,12 @@ function downloadBase64File(base64Data, fileName) {
 function sharePhoto() {
   const canvas = document.getElementById('canvas');
   canvas.toBlob(blob => {
-    const file = new File([blob], 'fileName.png', { type: blob.type });
+    const file = new File([blob], 'widom-tile.png', { type: blob.type });
     navigator
       .share({
         files: [file],
         title: 'Words of Wis\'Dam',
-        text: 'Your own Wisdom Tile',
+        text: 'I generated my own Wisdom Tile on https://wordsofwisdam.com',
       })
       .then(() => console.log('Share was successful.'))
       .catch((error) => console.log('Sharing failed', error));
