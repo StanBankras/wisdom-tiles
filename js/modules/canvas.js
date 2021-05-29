@@ -10,7 +10,7 @@ export default function() {
   pattern.onload = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = configuration.color;
-    ctx.font = '22px acumin-pro';
+    ctx.font = '22px Filson Pro';
 
     drawPattern(pattern);
     if(configuration.quote) {

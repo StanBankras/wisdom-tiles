@@ -86,10 +86,39 @@ h2 ~ p {
   outline: none;
 }
 
+.export-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.export-buttons .export {
+  background-color: transparent;
+  border: none;
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.export-buttons .export.share {
+  display: none;
+}
+
+.export-buttons .export img {
+  width: 30px;
+}
+
 .wrapper {
-  margin-top: 150px;
-  max-height: calc(100vh - 300px);
+  margin-top: 110px;
+  max-height: calc(100vh - 220px);
   overflow-y: auto;
+  width: calc(100vw - 120px);
 }
 
 @media (max-width: 1350px) {
@@ -110,6 +139,9 @@ h2 ~ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (max-width: 1350px) {

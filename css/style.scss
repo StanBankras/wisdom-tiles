@@ -77,10 +77,31 @@ h2 ~ p {
   }
 }
 
+.export-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  .export {
+    background-color: transparent;
+    border: none;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    &.share {
+      display: none;
+    }
+    img {
+      width: 30px;
+    }
+  }
+}
+
 .wrapper {
-  margin-top: 150px;
-  max-height: calc(100vh - 300px);
+  margin-top: 110px;
+  max-height: calc(100vh - 220px);
   overflow-y: auto;
+  width: calc(100vw - 120px);
   @media(max-width: 1350px) {
     width: calc(100% - 170px);
     margin-left: 60px;
@@ -91,6 +112,7 @@ h2 ~ p {
   }
   > div {
     display: flex;
+    justify-content: center;
     @media(max-width: 1350px) {
       flex-direction: column;
       align-items: center;
