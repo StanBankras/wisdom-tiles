@@ -44,7 +44,7 @@ function createTabs(currentTab) {
   if(currentTab !== 1) {
     const leftArrow = document.createElement('button');
     const icon = document.createElement('img');
-    icon.src = '../../assets/img/icons/chevron-left-solid.svg';
+    icon.src = './assets/img/icons/chevron-left-solid.svg';
     leftArrow.appendChild(icon);
     leftArrow.classList.add('left');
     leftArrow.addEventListener('click', () => initPatterns(currentTab - 1));
