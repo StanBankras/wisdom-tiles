@@ -58,7 +58,7 @@ function createTabs(currentTab) {
   if(currentTab < tabs) {
     const rightArrow = document.createElement('button');
     const icon = document.createElement('img');
-    icon.src = '../../assets/img/icons/chevron-right-solid.svg';
+    icon.src = './assets/img/icons/chevron-right-solid.svg';
     rightArrow.appendChild(icon);
     rightArrow.addEventListener('click', () => initPatterns(currentTab + 1));
     wrapper.appendChild(rightArrow);
