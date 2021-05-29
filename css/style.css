@@ -132,6 +132,8 @@ h2 ~ p {
   .wrapper {
     width: unset;
     margin-left: 0;
+    max-height: calc(100vh - 110px);
+    padding-bottom: 3rem;
   }
 }
 
@@ -513,6 +515,12 @@ h2 ~ p {
 .background.top.bottom, .background.bottom.bottom {
   bottom: 0;
   top: unset;
+}
+
+@media (max-width: 767px) {
+  .background.top.bottom, .background.bottom.bottom {
+    display: none;
+  }
 }
 
 .background.top.bottom img, .background.bottom.bottom img {
