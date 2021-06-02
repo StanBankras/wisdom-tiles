@@ -3,7 +3,7 @@ import { checkConfiguration } from './state-manager.js';
 
 export function initColors() {
   const colorsEl = document.querySelector('.colors');
-  const colors = ['#051937', '#547abd', '#7c9fd3', '#ffffff', '#f05b7c', '#54bc78', '#f38253', '#c16caa', '#7ed2e7'];
+  const colors = ['#001b39', '#587cd2', '#86aaff', '#ffffff', '#ee5c70', '#f48f52', '#77df88', '#ffe553', '#a2f4ea', '#ea7ed4', '#cc8aff', '#a6deff'];
 
   colors.forEach(color => {
     const btn = document.createElement('button');

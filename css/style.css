@@ -261,8 +261,8 @@ h2 ~ p {
 .wrapper .steps .colors {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1.5rem;
   max-width: 200px;
 }
