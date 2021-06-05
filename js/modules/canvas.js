@@ -13,7 +13,7 @@ export default function() {
   pattern.onload = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = configuration.color;
-    ctx.font = '22px Filson Pro';
+    ctx.font = '20px filson-pro';
 
     drawPattern(pattern);
     if(configuration.quote) {
@@ -57,6 +57,7 @@ function drawLinesCentered(lines, centerY, centerX) {
     const lineWidth = ctx.measureText(line.line).width;
     const xPos = centerX - lineWidth / 2;
     const yPos = line.y + moveY;
+    if(lineWidth > canvasWidth * 0.8) ctx.font = '16px filson-pro';
     ctx.fillText(line.line, xPos, yPos);
   });
 }

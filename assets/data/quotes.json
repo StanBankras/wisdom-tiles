@@ -172,7 +172,7 @@
     },
     {
       "country": "Argentinean proverb (Spanish)",
-      "quote": ":La vida no es un camino de rosa",
+      "quote": "La vida no es un camino de rosa",
       "translation": "Life is not a path of roses.",
       "meaning": "It's normal to encounter all kinds of difficulties along the road of life."
     },
@@ -244,7 +244,7 @@
     },
     {
       "country": "Chinese",
-      "quote": "请教别⼈⼀次是五分钟的傻⼦，从不请教别⼈是⼀辈⼦的傻⼦",
+      "quote": "请教别⼈⼀次是五分钟的傻⼦， 从不请教别⼈是⼀辈⼦的傻⼦",
       "translation": "He who asks a question is a fool for five minutes; he who does not ask a question remains a fool forever.",
       "meaning": "Be curious and ask questions about what you don’t know."
     },
@@ -253,12 +253,6 @@
       "quote": "Nana korobi ya ok",
       "translation": "Fall down seven times, stand up eight.",
       "meaning": "Fall down seven times, stand up eight."
-    },
-    {
-      "country": "Latin",
-      "quote": "Altissima quaeque flumina minimo sono labi",
-      "translation": "Still waters run deep",
-      "meaning": "Still waters run deep"
     },
     {
       "country": "English",
