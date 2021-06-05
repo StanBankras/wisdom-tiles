@@ -483,7 +483,7 @@ h2 ~ p {
 
 .background.top::after, .background.bottom::after {
   content: '';
-  background-color: #567bbb;
+  background-color: #587dd1;
   height: 49px;
   width: 100vw;
   position: absolute;
@@ -542,8 +542,6 @@ h2 ~ p {
 }
 
 .background.top.bottom img, .background.bottom.bottom img {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
   margin-bottom: -5px;
 }
 
@@ -580,7 +578,7 @@ h2 ~ p {
 
 .background.left::after, .background.right::after {
   content: '';
-  background-color: #567bbb;
+  background-color: #587dd1;
   width: 49px;
   height: 100vw;
   position: absolute;
