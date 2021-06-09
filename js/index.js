@@ -2,6 +2,7 @@ import { initColors } from './modules/colors.js';
 import { initButtons } from './modules/quote.js';
 import { initPatterns } from './modules/patterns.js';
 import updateCanvas from './modules/canvas.js';
+import scrollDown from './modules/scroll.js';
 import './modules/share.js';
 
 export const defaultConfiguration = {
@@ -27,3 +28,4 @@ initColors();
 initButtons();
 initPatterns(1);
 updateCanvas();
+scrollDown();

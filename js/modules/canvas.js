@@ -27,7 +27,6 @@ export default function() {
 function setupCanvas(canvas) {
   // Get the device pixel ratio, falling back to 1.
   var dpr = window.devicePixelRatio || 1;
-  console.log(dpr)
   // Get the size of the canvas in CSS pixels.
   var rect = canvas.getBoundingClientRect();
   // Give the canvas pixel dimensions of their CSS
@@ -82,7 +81,7 @@ function drawLinesCentered(lines, centerY, centerX) {
   lines.map((line, i) => {
     const lineWidth = ctx.measureText(line.line).width;
     const xPos = centerX - lineWidth / 2;
-    const yPos = line.y + moveY + 15 * dpr * i;
+    const yPos = line.y + moveY + 12.5 * dpr * i;
     ctx.fillText(line.line, xPos, yPos);
   });
 }
