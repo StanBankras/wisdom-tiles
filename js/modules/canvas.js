@@ -77,11 +77,12 @@ function calculateWrappedText(text, maxWidth, lineHeight, x, y) {
 function drawLinesCentered(lines, centerY, centerX) {
   const averageY = lines.reduce((acc, curr) => acc + curr.y, 0) / lines.length;
   const moveY = centerY - averageY;
+  const dpr = window.devicePixelRatio || 1;
 
   lines.map(line => {
     const lineWidth = ctx.measureText(line.line).width;
     const xPos = centerX - lineWidth / 2;
-    const yPos = line.y + moveY + 10;
+    const yPos = line.y + moveY + 15 * dpr;
     ctx.fillText(line.line, xPos, yPos);
   });
 }
