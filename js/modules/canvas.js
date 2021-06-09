@@ -79,10 +79,10 @@ function drawLinesCentered(lines, centerY, centerX) {
   const moveY = centerY - averageY;
   const dpr = window.devicePixelRatio || 1;
 
-  lines.map(line => {
+  lines.map((line, i) => {
     const lineWidth = ctx.measureText(line.line).width;
     const xPos = centerX - lineWidth / 2;
-    const yPos = line.y + moveY + 15 * dpr;
+    const yPos = line.y + moveY + 15 * dpr * i;
     ctx.fillText(line.line, xPos, yPos);
   });
 }
