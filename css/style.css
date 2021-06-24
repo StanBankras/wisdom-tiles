@@ -823,6 +823,32 @@ h2 ~ p {
   font-size: 24px;
 }
 
+#translation {
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem;
+  border: 1px solid var(--light);
+  margin: 1rem auto;
+}
+
+#translation h3 {
+  margin: 1rem 0;
+  text-align: center;
+  color: var(--light);
+}
+
+#translation h3::after {
+  content: '"';
+}
+
+#translation h3::before {
+  content: '"';
+}
+
+#translation .hidden, #translation.hidden {
+  display: none;
+}
+
 @-webkit-keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     -webkit-transform: translateY(0);

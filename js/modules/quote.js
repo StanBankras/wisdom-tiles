@@ -9,6 +9,13 @@ const buttons = {
 };
 const ownQuoteEl = document.querySelector('.own-quote');
 const input = document.querySelector('#quote-input');
+const translationEl = {
+  main: document.querySelector('#translation'),
+  origin: document.querySelector('#translation .origin'),
+  translation: document.querySelector('#translation .translation'),
+  meaning: document.querySelector('#translation .meaning')
+};
+
 let quotes = {};
 
 fetch('./assets/data/quotes.json')
@@ -19,6 +26,7 @@ fetch('./assets/data/quotes.json')
     configuration.quote = quote;
     defaultConfiguration.quote = quote;
     checkConfiguration();
+    displayTranslation();
   });
 
   input.addEventListener('keydown', e => handleQuoteInput(e));
@@ -28,11 +36,34 @@ fetch('./assets/data/quotes.json')
 export function initButtons() {
   Object.keys(buttons).forEach(key => {
     buttons[key].addEventListener('click', () => {
-      if(key === 'own') return ownQuote();
-      configuration.quoteType = key;
-      configuration.quote = getQuote(key);
+      if(key === 'own') {
+        ownQuote();
+      } else {
+        configuration.quoteType = key;
+        configuration.quote = getQuote(key);
+      }
+
+      displayTranslation();
     });
   });
+}
+
+function displayTranslation() {
+  if(configuration.quoteType === 'own') {
+    translationEl.main.classList.add('hidden');
+  } else {
+    const { meaning, translation, country } = configuration.quote;
+
+    if(country) {
+      translationEl.origin.textContent = `Originated in ${country}`;
+      translationEl.origin.classList.remove('hidden');
+    } else {
+      translationEl.origin.textContent = `Originated in The Netherlands`;
+    }
+
+    translationEl.translation.textContent = translation;
+    translationEl.meaning.textContent = meaning;
+  }
 }
 
 export function resetQuote() {
@@ -43,7 +74,7 @@ export function resetQuote() {
 }
 
 function handleQuoteInput(e) {
-  configuration.quote = e.target.value;
+  configuration.quote.quote = e.target.value;
   checkConfiguration();
 }
 
@@ -57,7 +88,7 @@ function getQuote(type) {
   configuration.quoteType = type;
   setActiveType(type);
   ownQuoteEl.classList.remove('shown');
-  return getRandomItem(quotes[type]).quote;
+  return getRandomItem(quotes[type]);
 }
 
 function setActiveType(type) {

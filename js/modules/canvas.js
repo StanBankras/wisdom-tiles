@@ -17,8 +17,8 @@ export default function() {
 
     drawPattern(pattern);
     if(configuration.quote) {
-      const lines = calculateWrappedText(configuration.quote, canvasWidth * 0.70, 30, 100, 100);
-      drawLinesCentered(lines, canvasWidth / 2, canvasWidth / 2)
+      const lines = calculateWrappedText(configuration.quote.quote, canvasWidth * 0.70, 30, 100, 100);
+      drawLinesCentered(lines, canvasWidth / 2, canvasWidth / 2);
     }
   }
 }
