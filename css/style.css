@@ -145,7 +145,6 @@ h2 ~ p {
 @media (max-width: 1350px) {
   .wrapper {
     width: calc(100% - 170px);
-    margin-left: 60px;
   }
 }
 
@@ -819,7 +818,7 @@ h2 ~ p {
   line-height: 2.2rem;
 }
 
-#front .container .lead-in p span {
+#front .container .lead-in p :first-child {
   font-size: 24px;
 }
 
