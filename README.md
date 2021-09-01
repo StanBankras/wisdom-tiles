@@ -5,7 +5,7 @@
 
 This website is used in the 2021/2022 ISGA of the HvA as a multimedia component. New foreign students coming to Amsterdam can create their own wisdom tiles: introducing them to some Dutch culture.
 
-The design was completely done by a group of visual design students. My main contact was Roos de Vries. All assets were created by them.
+The design was completely done by a group of visual design students. My main contact was [Roos de Vries](https://www.roosdevries.com/). All assets were created by them.
 
 ## Table of contents
 * [Concept](#)
